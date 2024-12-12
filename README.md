@@ -159,7 +159,3 @@ A tech enthusiast and aspiring professional in the field of High-Frequency Tradi
 - [Instagram](https://instagram.com/)
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See `LICENSE` for more details.
