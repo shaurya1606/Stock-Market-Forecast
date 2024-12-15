@@ -42,7 +42,6 @@ st.write('Data for', ticker, 'from', start_date, 'to', end_date)
 data.insert(0, "Date", data.index, True)
 data.reset_index(drop=True, inplace=True)
 st.dataframe(data, width=1000, height=450)
-
 # Visualization Section
 st.header('Interactive Multi-Column Data Visualization')
 st.subheader('Select the column to visualize')
@@ -65,13 +64,6 @@ st.dataframe(data, width=350, height=450)
 if st.sidebar.checkbox('Show Summary Statistics'):
     st.subheader(f'Summary Statistics for {selected_columns}')
     st.write(data[selected_columns].describe())
-
-# Optional Functionality: Correlation Heatmap
-if st.sidebar.checkbox('Show Correlation Heatmap'):
-    st.subheader('Correlation Heatmap of Stock Data')
-    corr = data[['Adj Close', 'Close', 'High', 'Low', 'Open', 'Volume']].corr()
-    fig_heatmap = px.imshow(corr, text_auto=True, color_continuous_scale='Blues', title='Correlation Heatmap')
-    st.plotly_chart(fig_heatmap)
 
 # ADF test check stationarity
 st.header('TS Data Stationary')
@@ -96,7 +88,7 @@ st.header('Model Forecasting')
 p = st.slider('Select the value of p', 0, 5, 2)
 d = st.slider('Select the value of d', 0, 5, 1)
 q = st.slider('Select the value of q', 0, 5, 2)
-seasonal_order = st.number_input('Select the value of seasonal p', 0, 24, 6)
+seasonal_order = st.number_input('Select the value of seasonal p', 0, 24, 4)
 
 # Create and fit SARIMAX model
 model = sm.tsa.statespace.SARIMAX(data[selected_columns], order=(p,d,q), seasonal_order=(p,d,q,seasonal_order))
