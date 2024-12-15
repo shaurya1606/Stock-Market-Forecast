@@ -104,7 +104,19 @@ model = model.fit()
 
 # Model Summary
 st.header('Model Summary')
-st.write(model.summary())
+
+# Convert model summary to HTML
+model_summary = model.summary().as_html()
+
+# Customize the table size with CSS
+custom_table = f"""
+<div style="overflow:auto; height:1000px; width:800px;">
+    {model_summary}
+</div>
+"""
+
+# Display the styled table
+st.markdown(custom_table, unsafe_allow_html=True)
 st.write("---")
 
 # Forecasting Section: Predict future values
