@@ -96,7 +96,7 @@ st.header('Model Forecasting')
 p = st.slider('Select the value of p', 0, 5, 2)
 d = st.slider('Select the value of d', 0, 5, 1)
 q = st.slider('Select the value of q', 0, 5, 2)
-seasonal_order = st.number_input('Select the value of seasonal p', 0, 24, 10)
+seasonal_order = st.number_input('Select the value of seasonal p', 0, 24, 6)
 
 # Create and fit SARIMAX model
 model = sm.tsa.statespace.SARIMAX(data[selected_columns], order=(p,d,q), seasonal_order=(p,d,q,seasonal_order))
