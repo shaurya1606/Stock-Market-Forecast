@@ -65,6 +65,7 @@ if st.sidebar.checkbox('Show Summary Statistics'):
     st.subheader(f'Summary Statistics for {selected_columns}')
     st.write(data[selected_columns].describe())
 
+
 # ADF test check stationarity
 st.header('TS Data Stationary')
 st.write('**Note:** If p-value is less than 0.05 then data is stationary')
