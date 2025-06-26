@@ -1,5 +1,5 @@
 # Stock Market Forecasting Application
-
+ 
 This repository contains the source code for the **Stock Market Forecasting Application**, a Streamlit-based web app that allows users to analyze, visualize, and forecast stock market data. It provides interactive visualizations, statistical analysis, and predictive modeling for selected stock tickers.
 
 ---
